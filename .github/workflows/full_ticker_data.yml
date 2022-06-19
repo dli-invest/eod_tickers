@@ -16,6 +16,9 @@ on:
 # what I care about is regression
 # making sure my code still works on the reddit api
 
+env:
+  remote: "friendlyuser/stock_names"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -73,8 +76,8 @@ jobs:
           
           
       - name: Dolt Import
-        uses: dolthub/dolt-action@v0.5
-        id: "dolt_import"
+        uses: dolthub/dolt-action@v1.0
+        id: "friendlyuser/stock_names"
         with:
           before: |
             file_list=`ls ./data/us_stock_data.csv`
