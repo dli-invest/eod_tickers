@@ -75,7 +75,7 @@ jobs:
           
           
       - name: Dolt Import
-        uses: dolthub/dolt-action@v1.0
+        uses: dolthub/dolt-action@latest
         id: "dolt-import"
         with:
           before: |
