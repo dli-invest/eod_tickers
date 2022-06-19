@@ -70,3 +70,20 @@ jobs:
           noprefix: false
           color: 0xff0000
           username: Eod Tickers
+          
+          
+      - name: Dolt Import
+        uses: dolthub/dolt-action@v0.5
+        id: "dolt_import"
+        with:
+          before: |
+            file_list=`ls ./data/us_stock_data.csv`
+            head "${file_list[1]}"
+            for file in "${file_list[@]}"; do
+              dolt table import --update-table -pk symbol stock_names "$file"
+            done
+          remote: ${{ env.remote }}
+          branch: ${{ env.branch }}
+          commit_message: "Dolt action commit"
+          dolthub_credential: ${{ secrets.DOLTHUB_CREDENTIAL }}
+          push: true
