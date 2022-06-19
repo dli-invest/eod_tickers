@@ -80,10 +80,10 @@ jobs:
         id: "dolt-import"
         with:
           before: |
-            file_list=`ls ./data/us_stock_data.csv`
+            file_list=`ls data/us_stock_data.csv`
             head "${file_list[1]}"
             for file in "${file_list[@]}"; do
-              dolt table import --update-table -pk symbol stock_names "$file"
+              dolt table import --update-table -pk symbol us_tickers "$file"
             done
           remote: ${{ env.remote }}
           branch: ${{ env.branch }}
