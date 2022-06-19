@@ -88,5 +88,5 @@ jobs:
           remote: ${{ env.remote }}
           branch: ${{ env.branch }}
           commit_message: "Dolt action commit"
-          dolthub_credential: ${{ secrets.DOLTHUB_CREDENTIAL }}
+          dolthub_credential: ${{ secrets.DOLTHUB_SECRET }}
           push: true
