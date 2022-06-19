@@ -82,7 +82,7 @@ except Exception as e:
 ticker_df = ticker_df.drop_duplicates(subset=['symbol'])
 # sort ticker_df by symbol
 ticker_df = ticker_df.sort_values(by=['symbol'])
-ticker_df.to_csv("data/us_stock_data.csv")
+ticker_df.to_csv("data/us_stock_data.csv",  index=False)
 # save missed tickers to data/us_stock_data_missed.txt 
 with open("data/us_stock_data_missed.txt", "w") as f:
     for ticker in missed_tickers:
