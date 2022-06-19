@@ -16,9 +16,6 @@ on:
 # what I care about is regression
 # making sure my code still works on the reddit api
 
-env:
-  remote: "friendlyuser/stock_names"
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -85,7 +82,7 @@ jobs:
             for file in "${file_list[@]}"; do
               dolt table import --update-table -pk symbol stock_names "$file"
             done
-          remote: ${{ env.remote }}
+          remote: "friendlyuser/stock_names"
           branch: ${{ env.branch }}
           commit_message: "Dolt action commit"
           dolthub_credential: ${{ secrets.DOLTHUB_CREDENTIAL }}
