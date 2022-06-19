@@ -16,7 +16,7 @@ on:
 # what I care about is regression
 # making sure my code still works on the reddit api
 env:
-  remote: "friendlyuser/stock_names"
+  remote: "friendlyuser/stonk_names"
   branch: "main"
 
 jobs:
